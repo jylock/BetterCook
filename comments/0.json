@@ -1,0 +1,16 @@
+{
+    "Recipe": "0",
+    "Comments":
+    [
+        {
+            "User": "adam",
+            "Rating": 5,
+            "Text": "Awesome recipe! 5/5 would try again"
+        },
+        {
+            "User": "jane",
+            "Rating": 1,
+            "Text": "Descriptions are terrible"
+        }
+    ]
+}
