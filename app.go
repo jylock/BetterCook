@@ -22,7 +22,7 @@ func main() {
 func getHandlers() *mux.Router {
 	router := mux.NewRouter()
 	router.HandleFunc("/", handleIndexGet).Methods("GET")
-	router.HandleFunc("/page", handlePageGet).Methods("GET")
+	router.HandleFunc("/template", handleTemplateGet).Methods("GET")
 	router.HandleFunc("/login", handleLoginGet).Methods("GET")
 	router.HandleFunc("/login", handleLoginPost).Methods("POST")
 	router.HandleFunc("/logout", handleLogoutGet).Methods("GET") // XXX: Logout is a GET

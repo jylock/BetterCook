@@ -11,9 +11,9 @@ func handleIndexGet(w http.ResponseWriter, r *http.Request) {
 	renderTemplate(w, "index.html", tmplData)
 }
 
-func handlePageGet(w http.ResponseWriter, r *http.Request) {
+func handleTemplateGet(w http.ResponseWriter, r *http.Request) {
 	pageName := strings.ToLower(r.URL.Query().Get("page"))
 	tmplData := map[string]string{"username": getUsername(r)}
 
-	renderTemplateFromDir(w, "pages", pageName+".html", tmplData)
+	renderTemplateFromDir(w, "templates", pageName+".html", tmplData)
 }
