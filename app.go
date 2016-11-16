@@ -28,6 +28,8 @@ func getHandlers() *mux.Router {
 	router.HandleFunc("/logout", handleLogoutGet).Methods("GET") // XXX: Logout is a GET
 	router.HandleFunc("/comments", handleCommentGet).Methods("GET")
 	router.HandleFunc("/comments", handleCommentPost).Methods("POST")
+	router.HandleFunc("/store", handleSetCachePost).Methods("POST")
+	router.HandleFunc("/store", handleGetCacheGet).Methods("GET")
 
 	return router
 }
