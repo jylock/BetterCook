@@ -1,10 +1,10 @@
 package main
 
 import (
+	"encoding/json"
 	"log"
 	"net/http"
 	"strconv"
-	"strings"
 )
 
 func handleCommentPost(w http.ResponseWriter, r *http.Request) {
@@ -24,17 +24,25 @@ func handleCommentPost(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	// TODO: Save comment
-	log.Println(recipe, comment, rating)
+	addComment(recipe, Comment{username, rating, comment})
+	log.Println("Saved", recipe, comment, rating)
 }
 
 func handleCommentGet(w http.ResponseWriter, r *http.Request) {
-	recipe := strings.ToLower(r.URL.Query().Get("recipe"))
+	recipe := r.URL.Query().Get("recipe")
 
 	if recipe == "" {
 		log.Println("Cannot get comments: Recipe is not specified")
+		return
 	}
 
-	// TODO: Get comments
-	log.Println(recipe)
+	comments := getComments(recipe)
+	// Marshal and return
+	commentsData, err := json.Marshal(comments)
+	if err != nil {
+		log.Println("Error marshalling comments", recipe)
+		return
+	}
+
+	w.Write(commentsData)
 }

@@ -1,6 +1,18 @@
 {
-    "Recipe": "0",
-    "Comments":
+    "Recipe1":
+    [
+        {
+            "User": "liam",
+            "Rating": 3,
+            "Text": "pretty average"
+        },
+        {
+            "User": "goat",
+            "Rating": 4,
+            "Text": "meh"
+        }
+    ],
+    "Recipe2":
     [
         {
             "User": "adam",

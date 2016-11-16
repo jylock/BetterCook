@@ -10,6 +10,8 @@ import (
 func main() {
 	port := "9898"
 
+	initComments()
+
 	http.Handle("/", getHandlers())
 	http.Handle("/static/", http.StripPrefix("/static/", http.FileServer(http.Dir("static"))))
 
@@ -24,6 +26,8 @@ func getHandlers() *mux.Router {
 	router.HandleFunc("/login", handleLoginGet).Methods("GET")
 	router.HandleFunc("/login", handleLoginPost).Methods("POST")
 	router.HandleFunc("/logout", handleLogoutGet).Methods("GET") // XXX: Logout is a GET
+	router.HandleFunc("/comments", handleCommentGet).Methods("GET")
+	router.HandleFunc("/comments", handleCommentPost).Methods("POST")
 
 	return router
 }
