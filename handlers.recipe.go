@@ -27,12 +27,16 @@ func handleRecipeGet(w http.ResponseWriter, r *http.Request) {
 	// Read recipe json file from /recipe
 	data, err := ioutil.ReadFile("./recipes/" + recipe + ".json")
 	if err != nil {
-		log.Println("Error reading comments.json", err)
+		log.Println("Error reading json", recipe, err)
 		return
 	}
 
 	var recipeInfo RecipeInfo
-	json.Unmarshal(data, &recipeInfo)
+	err = json.Unmarshal(data, &recipeInfo)
+	if err != nil {
+		log.Println("Error unmarshaling recipe info", recipe, err)
+		return
+	}
 
 	tmplData := map[string]interface{}{}
 	tmplData["R"] = recipeInfo
@@ -48,7 +52,7 @@ func handleRecipeThumbnailGet(w http.ResponseWriter, r *http.Request) {
 	// Read recipe json file from /recipe
 	data, err := ioutil.ReadFile("./recipes/" + recipe + ".json")
 	if err != nil {
-		log.Println("Error reading comments.json", err)
+		log.Println("Error reading json", recipe, err)
 		return
 	}
 
@@ -69,7 +73,7 @@ func handleRecipeBudgetGet(w http.ResponseWriter, r *http.Request) {
 	// Read recipe json file from /recipe
 	data, err := ioutil.ReadFile("./recipes/" + recipe + ".json")
 	if err != nil {
-		log.Println("Error reading comments.json", err)
+		log.Println("Error reading json", recipe, err)
 		return
 	}
 

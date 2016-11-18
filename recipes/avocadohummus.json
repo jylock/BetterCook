@@ -1,0 +1,29 @@
+{
+    "ID": "avocadohummus",
+    "Title": "Avocado Hummus",
+    "ImgURL": "/static/images/avocadohummus.png",
+    "Time": 25,
+    "Calories": 150,
+    "Budget": 4,
+    "Cuisine": "Middle Eastern",
+    "MealType": "Appetizer",
+    "Serves": 5,
+    "Ingredients":
+    [
+        "1 (15 oz) can chick peas, well drained",
+        "2 medium ripe avocados, cored and peeled (13 oz before cored and peeled)",
+        "3 Tbsp olive oil, plus more for serving if desired",
+        "1 1/2 Tbsp tahini",
+        "3 Tbsp fresh lime juice",
+        "1 clove garlic, peeled",
+        "Salt and freshly ground black pepper",
+        "1/8 tsp cumin",
+        "1 - 2 Tbsp finely chopped cilantro leaves, for topping",
+        "Red pepper flakes, for topping"
+    ],
+    "Instructions":
+    [
+        "Pulse chick peas, olive oil, tahini, lime juice, and garlic in a food processor until smooth, about 2 minutes. Season with salt and pepper to taste (I did a scant 1/2 tsp salt and about 1/8 tsp pepper), add cumin and avocados and pulse mixture until smooth and creamy, about 1 - 2 minutes longer.",
+        "Serve topped with more olive oil if desired and sprinkle with cilantro and red pepper flakes. Serve with pita chips or tortilla chips."
+    ]
+}

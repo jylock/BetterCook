@@ -1,0 +1,37 @@
+{
+    "ID": "falafel",
+    "Title": "Baked Falafel Appetizer",
+    "ImgURL": "/static/images/falafel.png",
+    "Time": 35,
+    "Calories": 60,
+    "Budget": 1,
+    "Cuisine": "Middle Eastern",
+    "MealType": "Appetizer",
+    "Serves": 20,
+    "Ingredients":
+    [
+        "1 cup dried chickpeas, soaked in saltwater",
+        "1/3 cup chopped red onion",
+        "1/4 cup each parsley and cilantro leaves",
+        "1 teaspoons salt",
+        "1/2 teaspoon freshly ground black pepper and cumin each",
+        "1/8 teaspoons each cinnamon and nutmeg",
+        "1 teaspoon baking powder",
+        "4 tablespoons (olive) oil + extra for baking",
+
+        "1/2 cup Greek yogurt",
+        "1/4 Long English cucumber, seeded and grated",
+        "1 garlic clove",
+        "salt to taste",
+        "10 cherry tomatoes, halved"
+    ],
+    "Instructions":
+    [
+        "Preheat oven to 375 F. Grease a baking sheet or oven-safe pan (cast iron) with oil.",
+        "Rinse the soaked chickpeas with cold water. Add them to a food processor with all other Falafel ingredients and pulse until combined. Form the mixture into 20 small balls and flatten.",
+        "Place on prepared pan and bake for 15-20 minutes. Flip half-way through.",
+
+        "Seed the cucumber and grate finely. Squeeze out extra liquid from the cucumber befo re adding to the yogurt. Grate the garlic clove and add as well.",
+        "Season with salt to taste."
+    ]
+}

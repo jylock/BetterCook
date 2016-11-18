@@ -1,0 +1,28 @@
+{
+    "ID": "wildsalmon",
+    "Title": "Wild Salmon, Asparagus, and Shiitakes in Parchment",
+    "ImgURL": "/static/images/wildsalmon.jpg",
+    "Time": 35,
+    "Calories": 240,
+    "Budget": 12,
+    "Cuisine": "American",
+    "MealType": "Entree",
+    "Serves": 4,
+    "Ingredients":
+    [
+        "8 ounces shiitake mushrooms, trimmed and thinly sliced",
+        "8 ounces medium asparagus (about 1/2 bunch), trimmed and halved lengthwise",
+        "4 scallions, thinly sliced",
+        "1/4 cup extra-virgin olive oil",
+        "Zest of 1 lemon, plus lemon wedges for serving",
+        "Coarse salt and freshly ground pepper",
+        "1/4 cup water",
+        "4 skinless wild-salmon fillets (5 ounces and 1 inch thick each)"
+    ],
+    "Instructions":
+    [
+        "Preheat oven to 400 degrees with racks in upper and lower thirds. Cut four 12-by-17-inch pieces of parchment. Fold each in half crosswise to make a crease, then unfold and lay flat. Toss mushrooms, asparagus, and scallions with oil in a large bowl. Sprinkle with lemon zest and season with salt and pepper.",
+        "Remove asparagus from mixture and divide evenly among parchment pieces, creating a bed of spears on 1 side of crease. Top each with 1 piece of fish, then with mushroom mixture. Drizzle each serving with 1 tablespoon water. To close, fold parchment pieces over each serving; make small overlapping pleats to seal the open sides and create 4 half-moon-shaped packets.",
+        "Bake packets on 2 baking sheets 9 minutes. Carefully cut open packets with kitchen shears (steam will be released). Serve fish, asparagus, and mushrooms with lemon wedges for squeezing."
+    ]
+}
