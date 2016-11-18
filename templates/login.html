@@ -7,7 +7,7 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-        <link rel="stylesheet" type="text/css" href="css/search_bar.css">
+        <link rel="stylesheet" type="text/css" href="/static/css/search_bar.css">
     </head>
     <body>
         <div id="nav_bar"></div>
@@ -16,18 +16,18 @@
 
             <br>
 
-            <form class="form-horizontal">
+            <form method="post" action="/login" role="form" class="form-horizontal">
                 <div class="form-group">
                     <label class="control-label col-md-4" for="username">Username:</label>
                     <div class="col-md-5">
-                        <input type="text" class="form-control " id="username" placeholder="Enter username">
+                        <input type="text" class="form-control" id="username" name="username" placeholder="Enter username">
                     </div>
                     <div class="col-md-3"></div>
                 </div>
                 <div class="form-group">
                     <label class="control-label col-md-4" for="password">Password:</label>
                     <div class="col-md-5">
-                        <input type="password" class="form-control " id="password" placeholder="Enter password">
+                        <input type="password" class="form-control" id="password" placeholder="Enter password">
                     </div>
                     <div class="col-md-3"></div>
                 </div>
@@ -42,10 +42,10 @@
             </form>
         </div>
         <!-- My Calender Library -->
-        <script src="js/bettercook.js"></script>
+        <script src="/static/js/bettercook.js"></script>
         <script>
         $(document).ready(function(){
-        $("#nav_bar").load("nav_bar.html");
+        $("#nav_bar").load("/template?page=nav_bar");
         });
         </script>
     </body>
