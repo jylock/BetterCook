@@ -1,0 +1,34 @@
+<div class="container">
+    <h1>{{ .R.Title }}</h1>
+    <img src="{{ .R.ImgURL }}"></img>
+    <ul>
+        <li>Time: {{ .R.Time }} minutes</li>
+        <li>Calories: {{ .R.Calories }} Cal</li>
+        <li>Budget: {{ .R.Budget }}/serving</li>
+        <li>Cuisine: {{ .R.Cuisine }}</li>
+        <li>Meal Type: {{ .R.MealType }}</li>
+        <li>Serves: {{ .R.Serves }}</li>
+    </ul>
+    <p>Rating {{ .rating }}</p>
+
+    {{ if .username }}
+    <button>Add {{ .R.ID }} to favorites</button>
+    {{ end }}
+
+    <div class="container">
+        <h1>Ingredients</h1>
+        <ul>
+            {{ range $ingredient := .R.Ingredients }}
+            <li>{{ $ingredient }}</li>
+            {{ end }}
+        </ul>
+    </div>
+    <div class="container">
+        <h1>Instructions</h1>
+        <ol>
+            {{ range $instr := .R.Instructions }}
+            <li>{{ $instr }}</li>
+            {{ end }}
+        </ol>
+    </div>
+</div>

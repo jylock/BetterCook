@@ -1,5 +1,5 @@
 {
-    "Recipe1":
+    "artichoke":
     [
         {
             "User": "liam",
@@ -12,7 +12,7 @@
             "Text": "meh"
         }
     ],
-    "Recipe2":
+    "greeksalad":
     [
         {
             "User": "adam",

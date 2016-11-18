@@ -1,13 +1,13 @@
 package main
 
 import (
-	"encoding/json"
 	"log"
 	"net/http"
 	"strconv"
 )
 
 func handleCommentPost(w http.ResponseWriter, r *http.Request) {
+	recipe := r.URL.Query().Get("recipe")
 	username := getUsername(r)
 
 	if username == "" {
@@ -15,7 +15,6 @@ func handleCommentPost(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	recipe := r.FormValue("recipe")
 	comment := r.FormValue("comment")
 	rating, err := strconv.Atoi(r.FormValue("rating"))
 
@@ -26,23 +25,24 @@ func handleCommentPost(w http.ResponseWriter, r *http.Request) {
 
 	addComment(recipe, Comment{username, rating, comment})
 	log.Println("Saved", recipe, comment, rating)
+	http.Redirect(w, r, "/", 200)
 }
 
-func handleCommentGet(w http.ResponseWriter, r *http.Request) {
-	recipe := r.URL.Query().Get("recipe")
+// func handleCommentGet(w http.ResponseWriter, r *http.Request) {
+// 	recipe := r.URL.Query().Get("recipe")
 
-	if recipe == "" {
-		log.Println("Cannot get comments: Recipe is not specified")
-		return
-	}
+// 	if recipe == "" {
+// 		log.Println("Cannot get comments: Recipe is not specified")
+// 		return
+// 	}
 
-	comments := getComments(recipe)
-	// Marshal and return
-	commentsData, err := json.Marshal(comments)
-	if err != nil {
-		log.Println("Error marshalling comments", recipe)
-		return
-	}
+// 	comments := getComments(recipe)
+// 	// Marshal and return
+// 	commentsData, err := json.Marshal(comments)
+// 	if err != nil {
+// 		log.Println("Error marshalling comments", recipe)
+// 		return
+// 	}
 
-	w.Write(commentsData)
-}
+// 	w.Write(commentsData)
+// }
