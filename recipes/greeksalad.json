@@ -1,0 +1,29 @@
+{
+    "ID": "greeksalad",
+    "Title": "Greek Salad",
+    "ImgURL": "/static/images/greeksalad.jpg",
+    "Time": 10,
+    "Calories": 150,
+    "Budget": 4,
+    "Cuisine": "Greek",
+    "MealType": "Salad",
+    "Serves": 6,
+    "Ingredients":
+    [
+        "3/4 pound tomatoes, seeded, diced (about 2 cups)",
+        "2 cups diced seeded peeled cucumber (from about 1 large)",
+        "1 cup diced red bell pepper (from about 1 large)",
+        "1/4 cup pitted kalamata olives or other brine-cured black olives, halved",
+        "1/4 cup diced red onion",
+        "3 tablespoons chopped fresh Italian parsley",
+        "3 tablespoons extra-virgin olive oil",
+        "1 1/2 tablespoons red wine vinegar",
+        "1/2 teaspoon dried oregano",
+        "1/4 cup crumbled feta cheese (about 2 ounces)"
+    ],
+    "Instructions":
+    [
+        "Toss first 9 ingredients in medium bowl to blend.",
+        "Gently mix in cheese. Season with salt and pepper."
+    ]
+}

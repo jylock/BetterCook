@@ -1,0 +1,21 @@
+<div>
+    <h1>{{ .R.Title }}</h1>
+    <img src="{{ .R.ImgURL }}"></img>
+    <ul>
+        <li>Time: {{ .R.Time }} minutes</li>
+        <li>Calories: {{ .R.Calories }} Cal</li>
+        <li>Budget: {{ .R.Budget }}/serving</li>
+        <li>Cuisine: {{ .R.Cuisine }}</li>
+        <li>Meal Type: {{ .R.MealType }}</li>
+        <li>Serves: {{ .R.Serves }}</li>
+    </ul>
+    <p>Rating {{ .rating }}</p>
+
+    {{ if .username }}
+    <button>Add {{ .R.ID }} to favorites</button>
+    {{ end }}
+    
+    <a href="/recipe?recipe={{ .R.ID }}">View Recipe</a>
+    <a href="/recipecomments?recipe={{ .R.ID }}">View Comments</a>
+    <a href="/recipebudget?recipe={{ .R.ID }}">Budgeting</a>
+</div>

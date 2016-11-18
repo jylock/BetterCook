@@ -34,6 +34,10 @@ func initComments() {
 }
 
 func getComments(recipeID string) []Comment {
+	read := serverCache.GetCache("comments", recipeID)
+	if read == nil {
+		return []Comment{}
+	}
 	return serverCache.GetCache("comments", recipeID).([]Comment)
 }
 
@@ -44,4 +48,18 @@ func addComment(recipeID string, comment Comment) {
 	comments = append(comments, comment)
 	// Save
 	serverCache.SetCache("comments", recipeID, comments)
+}
+
+func getRating(recipe string) float64 {
+	comments := getComments(recipe)
+	if len(comments) == 0 {
+		return 0
+	}
+
+	totalStars := 0
+	for _, v := range comments {
+		totalStars += v.Rating
+	}
+	average := float64(totalStars) / float64(len(comments))
+	return average
 }
