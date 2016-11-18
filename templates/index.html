@@ -1,26 +1,25 @@
-<html>
-<head>
-    <title>Better Cook</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="/static/bootstrap-3.3.7-dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/static/bootstrap-3.3.7-dist/css/bootstrap-theme.min.css">
-    <link rel="stylesheet" href="/static/font-awesome-4.7.0/css/font-awesome.min.css">
-    <script src="/static/jquery-3.1.1.min.js"></script>
-    <script src="/static/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
-</head>
-<body>
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>BetterCook</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="css/search_bar.css">
+    </head>
+    <body>
+        <div id="nav_bar"></div>
+        <div id="search_bar"></div>
 
-    <h1>better cook</h1>
-    {{ if .username -}}
-    <p>Welcome back! {{ .username }}</p>
-    <p><a href="/logout">Click here to logout</a></p>
-    {{ else -}}
-    <a href="/login">Click here to login</a>
-    {{ end -}}
-    <p>
-        <a href="/template?page=recipe1">Recipe 1</a>
-    </p>
-
-</body>
-
+        <!-- My Calender Library -->
+        <script src="js/bettercook.js"></script>
+        <script>
+        $(document).ready(function(){
+            $("#nav_bar").load("nav_bar.html");
+            $("#search_bar").load("search_bar.html");
+        });
+        </script>
+    </body>
 </html>
