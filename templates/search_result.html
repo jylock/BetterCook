@@ -7,7 +7,7 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
+        
         <!-- Jquery Library -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
         <link rel="stylesheet" type="text/css" href="/static/css/search_bar.css">
@@ -15,15 +15,26 @@
     <body>
         <div id="nav_bar"></div>
         <div id="search_bar"></div>
-
+        
+        <br>
+        <div class="container text-center" id="search_result">
+            <div class="row">
+                <div class="col-md-4" id="list"></div>
+                <div class="col-md-8" id="dynamic_tabs"></div>
+            </div>
+            
+        </div>
+        
         <!-- My Calender Library -->
         <script src="/static/js/bettercook.js"></script>
         <script>
         $(document).ready(function(){
             $("#nav_bar").load("/template?page=nav_bar");
+            $("#dynamic_tabs").load("/template?page=dynamic_tabs");
+
             $("#search_bar").load("/template?page=search_bar");
 
-
+            
         });
         </script>
     </body>
