@@ -1,34 +1,44 @@
-<div class="container">
-    <h1>{{ .R.Title }}</h1>
-    <img src="{{ .R.ImgURL }}"></img>
-    <ul>
-        <li>Time: {{ .R.Time }} minutes</li>
-        <li>Calories: {{ .R.Calories }} Cal</li>
-        <li>Budget: {{ .R.Budget }}/serving</li>
-        <li>Cuisine: {{ .R.Cuisine }}</li>
-        <li>Meal Type: {{ .R.MealType }}</li>
-        <li>Serves: {{ .R.Serves }}</li>
-    </ul>
-    <p>Rating {{ .rating }}</p>
+<div class="panel-group text-center">
+    <h2>{{ .R.Title }}</h2>
+    <img src="{{ .R.ImgURL }}" style="height:200px;width:100%"></img>
+    <div class="panel panel-default">
+        <div class="panel-heading">Info</div>
+        <div class="panel-body">
+        <ul>
+            <li>Time: {{ .R.Time }} minutes</li>
+            <li>Calories: {{ .R.Calories }} Cal</li>
+            <li>Budget: {{ .R.Budget }}/serving</li>
+            <li>Cuisine: {{ .R.Cuisine }}</li>
+            <li>Meal Type: {{ .R.MealType }}</li>
+            <li>Serves: {{ .R.Serves }}</li>
+        </ul>
+        <p>Rating {{ .rating }}</p>
 
-    {{ if .username }}
-    <button>Add {{ .R.ID }} to favorites</button>
-    {{ end }}
+        {{ if .username }}
+        <button class="btn btn-danger btn-lg">Add {{ .R.ID }} to favorites</button>
+        {{ end }}
+        </div>
+    </div>
 
-    <div class="container">
-        <h1>Ingredients</h1>
+    <div class="panel panel-default">
+        <div class="panel-heading">Ingredients</div>
+        <div class="panel-body">
         <ul>
             {{ range $ingredient := .R.Ingredients }}
             <li>{{ $ingredient }}</li>
             {{ end }}
         </ul>
+        </div>
     </div>
-    <div class="container">
-        <h1>Instructions</h1>
+
+    <div class="panel panel-default">
+        <div class="panel-heading">Instructions</div>
+        <div class="panel-body">
         <ol>
             {{ range $instr := .R.Instructions }}
             <li>{{ $instr }}</li>
             {{ end }}
         </ol>
+        </div>
     </div>
 </div>

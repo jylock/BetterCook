@@ -19,8 +19,9 @@
         <br>
         <div class="container text-center" id="search_result">
             <div class="row">
-                <div class="col-md-4" id="list"></div>
-                <div class="col-md-8" id="dynamic_tabs"></div>
+                <div class="col-md-5" id="search_list"></div>
+
+                <div class="col-md-7" id="dynamic_tabs"></div>
             </div>
             
         </div>
@@ -30,11 +31,20 @@
         <script>
         $(document).ready(function(){
             $("#nav_bar").load("/template?page=nav_bar");
+            $("#search_bar").load("/template?page=search_bar");
+            $("#search_list").load("/template?page=search_list");
             $("#dynamic_tabs").load("/template?page=dynamic_tabs");
 
-            $("#search_bar").load("/template?page=search_bar");
 
             
+            
+            $("body").on("click", ".result", function(){
+                var id = this.id;
+                $("#recipe").load("/recipe?recipe=" + id + "");
+                $("#budget").load("/recipebudget?recipe=" + id + "");
+                $("#comment").load("/recipecomments?recipe=" + id + "");
+            });
+
         });
         </script>
     </body>

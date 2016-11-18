@@ -1,12 +1,15 @@
-<div class="container">
-    <h1>Ingredients</h1>
-    <ul>
-        {{ range $ingredient := .R.Ingredients }}
-        <li name="{{ $ingredient }}">{{ $ingredient }}</li>
-        {{ end }}
-    </ul>
+<div class="panel-group">
+	<div class="panel panel-default">
+		<div class="panel-heading">Ingredients</div>
+		<div class="panel-body">
+			<ul>
+				{{ range $ingredient := .R.Ingredients }}
+				<li name="{{ $ingredient }}">{{ $ingredient }}</li>
+				{{ end }}
+			</ul>
+			{{ if .username }}
+			<button>Add to grocery list</button>
+			{{ end }}
+		</div>
+	</div>
 </div>
-
-{{ if .username }}
-<button>Add to grocery list</button>
-{{ end }}
