@@ -1,0 +1,29 @@
+{
+    "ID": "peachcobbler",
+    "Title": "Peach Cobbler",
+    "ImgURL": "/static/images/peachcobbler.jpg",
+    "Time": 60,
+    "Calories": 300,
+    "Budget": 6,
+    "Cuisine": "American",
+    "MealType": "Dessert",
+    "Serves": 4,
+    "Ingredients":
+    [
+        "4 cups peeled, sliced peaches",
+        "2 cups sugar, divided",
+        "1/2 cup water",
+        "8 tablespoons butter",
+        "1 1/2 cups self-rising flour",
+        "1 1/2 cups milk",
+        "Ground cinnamon"
+    ],
+    "Instructions":
+    [
+        "Preheat oven to 350 degrees F.",
+        "Combine the peaches, 1 cup sugar, and water in a saucepan and mix well. Bring to a boil and simmer for 10 minutes. Remove from the heat.",
+        "Put the butter in a 3-quart baking dish and place in oven to melt.",
+        "Mix remaining 1 cup sugar, flour, and milk slowly to prevent clumping. Pour mixture over melted butter. Do not stir. Spoon fruit on top, gently pouring in syrup. Sprinkle top with ground cinnamon, if using. Batter will rise to top during baking. Bake for 30 to 45 minutes.",
+        "To serve, scoop onto a plate and serve with your choice of whipped cream or vanilla ice cream."
+    ]
+}

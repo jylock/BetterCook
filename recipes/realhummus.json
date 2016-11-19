@@ -1,0 +1,27 @@
+{
+    "ID": "realhummus",
+    "Title": "Real Hummus",
+    "ImgURL": "/static/images/realhummus.png",
+    "Time": 15,
+    "Calories": 120,
+    "Budget": 3,
+    "Cuisine": "Middle Eastern",
+    "MealType": "Appetizer",
+    "Serves": 4,
+    "Ingredients":
+    [
+        "1 clove garlic",
+        "1 (19 ounce) can garbanzo beans, half the liquid reserved",
+        "4 tablespoons lemon juice",
+        "2 tablespoons tahini",
+        "1 clove garlic, chopped",
+        "1 teaspoon salt",
+        "black pepper to taste",
+        "2 tablespoons olive oil"
+    ],
+    "Instructions":
+    [
+        "In a blender, chop the garlic. Pour garbanzo beans into blender, reserving about a tablespoon for garnish. Place lemon juice, tahini, chopped garlic and salt in blender. Blend until creamy and well mixed.",
+        "Transfer the mixture to a medium serving bowl. Sprinkle with pepper and pour olive oil over the top. Garnish with reserved garbanzo beans."
+    ]
+}

@@ -1,0 +1,31 @@
+{
+    "ID": "mamas",
+    "Title": "Mama’s Best Ever Spaghetti and Mozzarella Meatballs",
+    "ImgURL": "/static/images/mamas.png",
+    "Time": 80,
+    "Calories": 526,
+    "Budget": 10,
+    "Cuisine": "Italian",
+    "MealType": "Entree",
+    "Serves": 2,
+    "Ingredients":
+    [
+        "Olive oil for greasing pan",
+        "1 pound lean ground beef",
+        "1/3 cup Italian seasoned dry bread crumbs",
+        "1 cup shredded mozzarella cheese",
+        "1 egg",
+        "2 cloves garlic, minced",
+        "1 (24 ounce) jar Ragu® Old World Style® Traditional Pasta Sauce",
+        "12 ounces spaghetti, cooked and drained",
+        "2 tablespoons grated Parmesan cheese, plus extra for serving"
+    ],
+    "Instructions":
+    [
+        "Preheat oven to 400 degrees F (200 degrees C). Lightly grease a large rimmed baking sheet with olive oil.",
+        "Combine ground beef, bread crumbs, egg, mozzarella cheese, and garlic in a medium bowl. Use a 1/4 cup measure or ice cream scoop to portion into 12 to 13 meatballs. Place on prepared baking sheet.",
+        "Baked until browned and cooked through, about 15 minutes.",
+        "Bring the Ragu(R) Sauce to a simmer in a 12-inch skillet. Gently place the cooked meatballs into the sauce. Simmer 10 minutes.",
+        "Ladle some of the sauce over hot pasta and toss to coat. Serve with more sauce and the meatballs with a sprinkle of Parmesan cheese."
+    ]
+}

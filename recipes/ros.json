@@ -1,0 +1,35 @@
+{
+    "ID": "ros",
+    "Title": "RO’s Spaghetti and Meatballs",
+    "ImgURL": "/static/images/ros.png",
+    "Time": 75,
+    "Calories": 300,
+    "Budget": 10,
+    "Cuisine": "Italian",
+    "MealType": "Entree",
+    "Serves": 2,
+    "Ingredients":
+    [
+        "1/4 cup olive oil",
+        "3 cloves garlic, minced",
+        "1 large onion, sliced",
+        "2 (14 ounce) cans canned tomatoes",
+        "2 tablespoons chopped fresh basil",
+        "8 ounces ground beef",
+        "1 cup graham cracker crumbs",
+        "2 eggs",
+        "2 tablespoons grated Parmesan cheese",
+        "1/4 cup chopped fresh parsley",
+        "3 tablespoons olive oil",
+        "1 (12 ounce) package spaghetti",
+        "salt and pepper to taste",
+        "chopped fresh basil",
+        "grated Parmesan cheese"
+    ],
+    "Instructions":
+    [
+        "Combine 1/4 cup olive oil, garlic, onion, tomatoes, and 2 tablespoons chopped basil in a large saucepan; bring to a boil. Season with salt and pepper. Reduce heat, and simmer gently for at least 40 minutes.",
+        "While the sauce simmers, combine ground beef, graham cracker crumbs, eggs, 2 tablespoons Parmesan cheese, parsley, and 3 tablespoons olive oil in a large bowl. Mix well with clean hands, and shape into 20 walnut-size meatballs. Heat a large skillet over medium-high heat; fry meatballs until browned and cooked though, about 10 minutes. Add the meatballs to the tomato sauce, and simmer gently while boiling the pasta.",
+        "Bring a large pot of salted water to a boil; stir in spaghetti. Cook the pasta until it has cooked through, but is still firm to the bite, about 12 minutes. Drain well. Carefully toss the spaghetti with the sauce and meatballs. Serve, sprinkling each plate with fresh basil and Parmesan cheese."
+    ]
+}
