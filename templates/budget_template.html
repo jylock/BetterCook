@@ -1,14 +1,21 @@
-<div class="panel-group">
+<div class="panel-group text-left">
 	<div class="panel panel-default">
 		<div class="panel-heading">Ingredients</div>
 		<div class="panel-body">
-			<ul>
+			<form>
+				{{ range $ingredient := .R.Ingredients }}
+			    <div class="checkbox">
+			      <label><input type="checkbox" class="ingredient" value="{{ $ingredient }}">{{ $ingredient }}</label>
+			    </div>
+			 	{{ end }}
+			</form>
+			<!-- <ul>
 				{{ range $ingredient := .R.Ingredients }}
 				<li name="{{ $ingredient }}">{{ $ingredient }}</li>
 				{{ end }}
-			</ul>
+			</ul> -->
 			{{ if .username }}
-			<button>Add to grocery list</button>
+			<button class="btn btn-primary btn-lg" id="budget_btn">Add to Grocery List</button>
 			{{ end }}
 		</div>
 	</div>

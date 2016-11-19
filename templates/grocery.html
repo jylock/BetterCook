@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>BetterCook</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script> -->
+        <!-- Jquery Library -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        
+        <link rel="stylesheet" type="text/css" href="/static/css/search_bar.css">
+    </head>
+    <body>
+        <div id="nav_bar"></div>
+        
+        <br>
+
+        <div class="container text-center" id="search_result">
+            <div class="jumbotron">
+                <h1><span class="glyphicon glyphicon-list"></span> Grocery List</h1> 
+            </div>
+            
+            <div class="well well-lg text-left">
+                <ul class="list-group" id="grocery">
+                    <!-- <li class="list-group-item">New <span class="badge glyphicon glyphicon-usd">5</span></li> -->
+                </ul>
+                <p class="bg-primary">Total: $100</p>
+            </div>
+            
+            
+        </div>
+        
+        <!-- My Calender Library -->
+        <script src="/static/js/bettercook.js"></script>
+        <script>
+
+        $(document).ready(function(){
+            $("#nav_bar").load("/template?page=nav_bar");
+
+            grocery = JSON.parse(sessionStorage.getItem("grocery"));
+            for(var i in grocery){
+                $("#grocery").append(
+                    "<li class='list-group-item'>" + "<a href='#' class='remove' id='" + i + "'><span class='glyphicon glyphicon-remove'></span></a>" + grocery[i] + "<span class='badge glyphicon glyphicon-usd'>5</span></li>");
+            }
+
+            $(".remove").click(function(){
+                var index = parseInt(this.id);
+                grocery.splice(index, 1);
+                sessionStorage.setItem("grocery", JSON.stringify(grocery));
+                location.reload();
+            });
+        });
+        </script>
+    </body>
+</html>

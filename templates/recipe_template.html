@@ -2,37 +2,39 @@
     <h2>{{ .R.Title }}</h2>
     <img src="{{ .R.ImgURL }}" style="height:200px;width:100%"></img>
     <div class="panel panel-default">
-        <div class="panel-heading">Info</div>
+        <div class="panel-heading text-left"><h5>Info</h5></div>
         <div class="panel-body">
-        <ul>
+        <ul class="text-left">
             <li>Time: {{ .R.Time }} minutes</li>
             <li>Calories: {{ .R.Calories }} Cal</li>
             <li>Budget: {{ .R.Budget }}/serving</li>
             <li>Cuisine: {{ .R.Cuisine }}</li>
             <li>Meal Type: {{ .R.MealType }}</li>
             <li>Serves: {{ .R.Serves }}</li>
+            <li>Rating {{ .rating }}</li>
         </ul>
-        <p>Rating {{ .rating }}</p>
 
         {{ if .username }}
-        <button class="btn btn-danger btn-lg">Add {{ .R.ID }} to favorites</button>
+        <button class="btn btn-danger btn-lg fav_btn" id="{{ .R.ID }}">Add {{ .R.Title }} to favorites</button>
         {{ end }}
         </div>
     </div>
 
-    <div class="panel panel-default">
-        <div class="panel-heading">Ingredients</div>
+    <div class="panel panel-default text-left">
+        <div class="panel-heading">
+            <h5>Ingredients <small>Hover Over To See Substitutable Ingredients!</small></h5>
+        </div>
         <div class="panel-body">
         <ul>
             {{ range $ingredient := .R.Ingredients }}
-            <li>{{ $ingredient }}</li>
+            <li><a href="#" data-toggle="tooltip" data-placement="top" title="Turkey / Pork">{{ $ingredient }}</a></li>
             {{ end }}
         </ul>
         </div>
     </div>
 
-    <div class="panel panel-default">
-        <div class="panel-heading">Instructions</div>
+    <div class="panel panel-default text-left">
+        <div class="panel-heading"><h5>Instructions</h5></div>
         <div class="panel-body">
         <ol>
             {{ range $instr := .R.Instructions }}
