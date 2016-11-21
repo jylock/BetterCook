@@ -10,11 +10,32 @@
 	</div> -->
 </div>
 <script type="text/javascript">
+function looseComparison(query, cuisine, recipe) {
+	var q = query.toUpperCase();
+	var c = cuisine.toUpperCase();
+	var r_id = recipe.ID.toUpperCase();
+	var r_title = recipe.Title.toUpperCase();
+	var r_cuisine = recipe.Cuisine.toUpperCase();
+
+	var f_id = (q.indexOf(r_id) > -1) || (r_title.indexOf(q) > -1);
+	var f_cuisine = (r_cuisine.indexOf(c) > -1) || (r_title.indexOf(c) > -1);
+	if(c === ""){ 
+		f_cuisine = false;
+	}
+	if(q === ""){
+		f_id = false;
+	}
+	return f_id || f_cuisine;
+}
+
 $(document).ready(function(){
 	$.get( "/allrecipes", function( data ) {
 	var recipes = JSON.parse(data);
+	var query = sessionStorage.getItem("query");
+	var cuisine = sessionStorage.getItem("cuisine");
 	for(var i in recipes){
-		$("#list").append("<a href='#'" + "class='result' id='"+ recipes[i].ID + "'>" + 
+		if(looseComparison(query, cuisine, recipes[i])){
+			$("#list").append("<a href='#'" + "class='result' id='"+ recipes[i].ID + "'>" + 
 							"<div class='media'>" +
 							"<div class='media-left'>" +
 								"<img src='" + recipes[i].ImgURL + "' " + "class='media-object' style='width:60px'>" +
@@ -40,6 +61,8 @@ $(document).ready(function(){
 						  "</div>" + 
 						  "</a>");
 		$("#list").append("<hr>");
+		}
+		
 	}
 	});
 
