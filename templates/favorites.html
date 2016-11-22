@@ -45,32 +45,35 @@
             var recipes = JSON.parse(data);
             for(var i in recipes){
                 if(favorites.indexOf(recipes[i].ID) > -1){
-                    $("#favorites_list").append("<a href='#'" + "class='result' id='"+ recipes[i].ID + "'>" + 
-                                        "<div class='media'>" +
-                                        "<div class='media-left'>" +
-                                            "<img src='" + recipes[i].ImgURL + "' " + "class='media-object' style='width:60px'>" +
-                                        "</div>" +
-                                        "<div class='media-body'>" +
-                                            "<h4 class='media-heading'>" + recipes[i].Title + "</h4>" +
-                                            "<div class='row'>" +
-                                                "<div class='col-md-6'>" +
-                                                    "<p>Time: " + recipes[i].Time + "</p>" +
-                                                    "<p>Calories:" + recipes[i].Calories + "</p>" +
-                                                    "<p>Budget:" + recipes[i].Budget + "</p>" +
-                                                "</div>" +
-                                                "<div class='col-md-6'>" +
-                                                    "<p>Cuisine: " + recipes[i].Cuisine + "</p>" +
-                                                    "<p>MealType: " + recipes[i].MealType + "</p>" +
-                                                    "<p>Serves: " + recipes[i].Serves + "</p>" +
-                                                "</div>" +
-                                            "</div>" +
-                                            "<div class='row'>" +
-                                                "<p>&nbsp;&nbsp;&nbsp;&nbsp;rating: 5" + "</p>" +
-                                            "</div>" +
-                                        "</div>" +
-                                      "</div>" + 
-                                      "</a>");
-                    $("#favorites_list").append("<hr>");
+                    $.get('/recipethumbnail?recipe=' + recipes[i].ID, function(data) {
+				        $("#favorites_list").append(data);
+                    });
+                    // $("#favorites_list").append("<a href='#'" + "class='result' id='"+ recipes[i].ID + "'>" + 
+                    //                     "<div class='media'>" +
+                    //                     "<div class='media-left'>" +
+                    //                         "<img src='" + recipes[i].ImgURL + "' " + "class='media-object' style='width:60px'>" +
+                    //                     "</div>" +
+                    //                     "<div class='media-body'>" +
+                    //                         "<h4 class='media-heading'>" + recipes[i].Title + "</h4>" +
+                    //                         "<div class='row'>" +
+                    //                             "<div class='col-md-6'>" +
+                    //                                 "<p>Time: " + recipes[i].Time + "</p>" +
+                    //                                 "<p>Calories:" + recipes[i].Calories + "</p>" +
+                    //                                 "<p>Budget:" + recipes[i].Budget + "</p>" +
+                    //                             "</div>" +
+                    //                             "<div class='col-md-6'>" +
+                    //                                 "<p>Cuisine: " + recipes[i].Cuisine + "</p>" +
+                    //                                 "<p>MealType: " + recipes[i].MealType + "</p>" +
+                    //                                 "<p>Serves: " + recipes[i].Serves + "</p>" +
+                    //                             "</div>" +
+                    //                         "</div>" +
+                    //                         "<div class='row'>" +
+                    //                             "<p>&nbsp;&nbsp;&nbsp;&nbsp;rating: 5" + "</p>" +
+                    //                         "</div>" +
+                    //                     "</div>" +
+                    //                   "</div>" + 
+                    //                   "</a>");
+                    // $("#favorites_list").append("<hr>");
                 }
             }
             });
