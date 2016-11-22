@@ -1,16 +1,17 @@
 <div class="container text-center">
     <h1>BetterCook</h1>
     <div class="row">
-        <form class="form-inline">
+        <div class="form-inline">
             <div class="form-group">
                 <label class="sr-only" for="query">Search</label>
-                <input type="text" class="form-control " id="query" placeholder="Enter recipe name or ingredients">
+                <input type="text" class="form-control" id="query" placeholder="Enter recipe name or ingredients"
+                    onkeydown="if (event.keyCode == 13) document.getElementById('search_btn').click()">
             </div>
             <div class="form-group">
                 <!-- <a href="/template?page=search_result"><button type="submit" class="btn btn-default" id="search_btn">Search</button></a> -->
                 <a href="/template?page=search_result" id="search_btn">Search</a>
             </div>
-        </form>
+        </div>
     </div>
     
     <br>
@@ -83,11 +84,11 @@
     
 </div>
 
-<!-- <script>
-    $("#search_btn").hover(function()
-{
-    alert("haha");
-    console.log("haha");
-});
-
-</script> -->
+<script>
+    $("#search_btn").click(function(){
+        var query = $("#query").val();
+        var cuisine = $("#cuisine").val();
+        sessionStorage.setItem("query", query);
+        sessionStorage.setItem("cuisine", cuisine);
+    });
+</script>
