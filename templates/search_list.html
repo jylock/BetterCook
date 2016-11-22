@@ -23,9 +23,16 @@ function looseComparison(query, cuisine, recipe) {
 		f_cuisine = false;
 	}
 	if(q === ""){
-		f_id = false;
+		f_id = true;
 	}
 	return f_id || f_cuisine;
+}
+
+// Test for lemon
+function looseComparison2(query, recipe) {
+	var q = query.toUpperCase();
+	var r_title = recipe.Title.toUpperCase();
+	return q.indexOf("LEMON") > -1 && r_title.indexOf("HUMMUS") > -1;
 }
 
 $(document).ready(function(){
@@ -34,7 +41,7 @@ $(document).ready(function(){
 	var query = sessionStorage.getItem("query");
 	var cuisine = sessionStorage.getItem("cuisine");
 	for(var i in recipes){
-		if(looseComparison(query, cuisine, recipes[i])){
+		if(looseComparison(query, cuisine, recipes[i]) || looseComparison2(query, recipes[i])){
 			$("#list").append("<a href='#'" + "class='result' id='"+ recipes[i].ID + "'>" + 
 							"<div class='media'>" +
 							"<div class='media-left'>" +

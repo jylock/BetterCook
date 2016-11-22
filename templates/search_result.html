@@ -32,7 +32,18 @@
 
         $(document).ready(function(){
             $("#nav_bar").load("/template?page=nav_bar");
-            $("#search_bar").load("/template?page=search_bar");
+            $("#search_bar").load("/template?page=search_bar", function(){
+                $("#search_btn").click(function(){
+                    var query = $("#query").val();
+                    if(query.toUpperCase().indexOf("SPAGHETTI") > -1){
+                        query = "SPAGHETTI";
+                    }
+                    var cuisine = $("#cuisine").val();
+                    sessionStorage.setItem("query", query);
+                    sessionStorage.setItem("cuisine", cuisine);
+                });
+            });
+            
             $("#search_list").load("/template?page=search_list");
             $("#dynamic_tabs").load("/template?page=dynamic_tabs");
 
