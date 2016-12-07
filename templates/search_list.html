@@ -37,6 +37,7 @@ function looseComparison2(query, recipe) {
 
 $(document).ready(function(){
 	$.get( "/allrecipes", function( data ) {
+
 	var recipes = JSON.parse(data);
 	var query = sessionStorage.getItem("query");
 	var cuisine = sessionStorage.getItem("cuisine");
@@ -69,10 +70,8 @@ $(document).ready(function(){
 						  "</div>" + 
 						  "</a>");
 		$("#list").append("<hr>");
-		}
-		
 	}
+		}
 	});
-
 });
 </script>
