@@ -41,6 +41,7 @@ $(document).ready(function(){
 	var query = sessionStorage.getItem("query");
 	var cuisine = sessionStorage.getItem("cuisine");
 	for(var i in recipes){
+		var rating = Math.floor((Math.random() * 5) + 1);
 		if(looseComparison(query, cuisine, recipes[i]) || looseComparison2(query, recipes[i])){
 			$("#list").append("<a href='#'" + "class='result' id='"+ recipes[i].ID + "'>" + 
 							"<div class='media'>" +
@@ -62,7 +63,7 @@ $(document).ready(function(){
 									"</div>" +
 								"</div>" +
 								"<div class='row'>" +
-									"<p>&nbsp;&nbsp;&nbsp;&nbsp;rating: 5" + "</p>" +
+									"<p>&nbsp;&nbsp;&nbsp;&nbsp;rating: "+ rating + "</p>" +
 								"</div>" +
 							"</div>" +
 						  "</div>" + 

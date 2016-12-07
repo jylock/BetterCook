@@ -26,7 +26,7 @@
                 <ul class="list-group" id="grocery">
                     <!-- <li class="list-group-item">New <span class="badge glyphicon glyphicon-usd">5</span></li> -->
                 </ul>
-                <p class="bg-primary">Total: $100</p>
+                <p class="bg-primary" id="sum"></p>
             </div>
             
             
@@ -40,10 +40,16 @@
             $("#nav_bar").load("/template?page=nav_bar");
 
             grocery = JSON.parse(sessionStorage.getItem("grocery"));
+            var sum = 0;
             for(var i in grocery){
+                var rating = Math.floor((Math.random() * 5) + 1);
+                sum += rating;
                 $("#grocery").append(
-                    "<li class='list-group-item'>" + "<a href='#' class='remove' id='" + i + "'><span class='glyphicon glyphicon-remove'></span></a>" + grocery[i] + "<span class='badge glyphicon glyphicon-usd'>5</span></li>");
+                    "<li class='list-group-item'>" + "<a href='#' class='remove' id='" + i + "'><span class='glyphicon glyphicon-remove'></span></a>" + grocery[i] + "<span class='badge glyphicon glyphicon-usd'>" + rating + "</span></li>");
             }
+
+            // var sum = 5 * grocery.length;
+            $("#sum").append("Total: $" + sum);
 
             $(".remove").click(function(){
                 var index = parseInt(this.id);
