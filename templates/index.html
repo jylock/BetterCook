@@ -21,41 +21,7 @@
         <script>
         $(document).ready(function(){
             $("#nav_bar").load("/template?page=nav_bar");
-            
-            $("#search_bar").load("/template?page=search_bar", function(){
-                $("#search_btn").click(function(){
-                    var query = $("#query").val();
-                    if(query === ""){ query = "NA"; }
-                    
-                    var cuisine = $("#cuisine").val();
-                    if(meal === ""){ cuisine = "NA"; }
-
-                    var diet = $("#diet").val();
-                    if(diet === ""){ diet = "NA"; }
-
-                    var meal = $("#meal").val();
-                    if(meal === ""){ meal = "NA"; }
-
-                    var mins = $("#mins").val();
-                    if(mins === ""){ mins = "NA"; }
-
-                    var dollars = $("#dollars").val();
-                    if(dollars === ""){ dollars = "NA"; }
-
-                    var calories = $("#calories").val();
-                    if(calories === ""){ calories = "NA"; }
-
-                    sessionStorage.setItem("query", query);
-                    sessionStorage.setItem("cuisine", cuisine);
-                    sessionStorage.setItem("diet", diet);
-                    sessionStorage.setItem("meal", meal);
-                    sessionStorage.setItem("mins", mins);
-                    sessionStorage.setItem("dollars", dollars);
-                    sessionStorage.setItem("calories", calories);
-                });
-            });
-
-
+            $("#search_bar").load("/template?page=search_bar");
         });
         </script>
     </body>

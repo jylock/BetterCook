@@ -19,7 +19,7 @@
     
     <div class="row">
         <div class="col-md-6">
-            <form class="form-horizontal">
+            <div class="form-horizontal">
                 <div class="form-group">
                     <label class="control-label col-md-3" for="cuisine">Cuisine:</label>
                     <div class="col-md-9">
@@ -54,10 +54,10 @@
                     </div>
                     
                 </div>
-            </form>
+            </div>
         </div>
         <div class="col-md-6">
-            <form class="form-horizontal">
+            <div class="form-horizontal">
                 <div class="form-group">
                     <label class="control-label col-md-3" for="mins">Minutes:</label>
                     <div class="col-md-9">
@@ -79,7 +79,7 @@
                     </div>
                     
                 </div>
-            </form>
+            </div>
         </div>
     </div>
     
@@ -88,8 +88,32 @@
 <script>
     $("#search_btn").click(function(){
         var query = $("#query").val();
+        if(query === ""){ query = "NA"; }
+        
         var cuisine = $("#cuisine").val();
+        if(meal === ""){ cuisine = "NA"; }
+
+        var diet = $("#diet").val();
+        if(diet === ""){ diet = "NA"; }
+
+        var meal = $("#meal").val();
+        if(meal === ""){ meal = "NA"; }
+
+        var mins = $("#mins").val();
+        if(mins === ""){ mins = "NA"; }
+
+        var dollars = $("#dollars").val();
+        if(dollars === ""){ dollars = "NA"; }
+
+        var calories = $("#calories").val();
+        if(calories === ""){ calories = "NA"; }
+
         sessionStorage.setItem("query", query);
         sessionStorage.setItem("cuisine", cuisine);
+        sessionStorage.setItem("diet", diet);
+        sessionStorage.setItem("meal", meal);
+        sessionStorage.setItem("mins", mins);
+        sessionStorage.setItem("dollars", dollars);
+        sessionStorage.setItem("calories", calories);
     });
 </script>
