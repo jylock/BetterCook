@@ -2,7 +2,7 @@
     <h2>{{ .R.Title }}</h2>
     <img src="{{ .R.ImgURL }}" style="height:200px;width:100%"></img>
     <div class="panel panel-default">
-        <div class="panel-heading text-left"><h5>Info</h5></div>
+        <div class="panel-heading text-left"><h4>Info</h4></div>
         <div class="panel-body">
         <ul class="text-left">
             <li>Time: {{ .R.Time }} minutes</li>
@@ -22,7 +22,7 @@
 
     <div class="panel panel-default text-left">
         <div class="panel-heading">
-            <h5>Ingredients <small>Hover Over To See Substitutable Ingredients!</small></h5>
+            <h4>Ingredients <small>Hover Over To See Substitutable Ingredients!</small></h4>
         </div>
         <div class="panel-body">
         <ul>
@@ -34,7 +34,7 @@
     </div>
 
     <div class="panel panel-default text-left">
-        <div class="panel-heading"><h5>Instructions</h5></div>
+        <div class="panel-heading"><h4>Instructions</h4></div>
         <div class="panel-body">
         <ol>
             {{ range $instr := .R.Instructions }}

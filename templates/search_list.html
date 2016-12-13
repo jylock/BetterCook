@@ -35,15 +35,111 @@ function looseComparison2(query, recipe) {
 	return q.indexOf("LEMON") > -1 && r_title.indexOf("HUMMUS") > -1;
 }
 
+function completeComparison(recipe) {
+	var query = sessionStorage.getItem("query");
+	var cuisine = sessionStorage.getItem("cuisine");
+	var meal = sessionStorage.getItem("meal");
+    var mins = sessionStorage.getItem("mins");
+    var dollars = sessionStorage.getItem("dollars");
+    var calories = sessionStorage.getItem("calories");
+
+    var diet = sessionStorage.getItem("diet");
+
+
+    var query_f = true;
+    var cuisine_f = true;
+    var meal_f = true;
+    var mins_f = true;
+    var dollars_f = true;
+    var calories_f = true;
+
+    // Check query match for ingredients
+    if(query === "NA"){
+    	query_f = true;
+    }
+    else if(query.indexOf(',') > -1){
+    	var ingredients = query.split(',');
+    	for(var i in ingredients){
+    		var ingredient = ingredients[i].trim();
+    		var hit = false;
+    		for(var j in recipe.Ingredients){
+    			if(recipe.Ingredients[j].indexOf(ingredient) > -1){
+    				hit = true;
+    				break;
+    			}
+    		}
+    		if(hit === false){
+    			query_f = false;
+    			break;
+    		}
+    	}
+    }
+    else{
+    	var terms = query.split(' ');
+    	var match = false;
+    	for(var k in terms){
+    		var term = terms[k].trim().toUpperCase();
+    		if(recipe.Title.toUpperCase().indexOf(term) > -1){
+    			match = true;
+    			break;
+    		}
+    		
+    		for(var p in recipe.Ingredients){
+    			if(recipe.Ingredients[p].toUpperCase().indexOf(term) > -1){
+    				match = true;
+    				break;
+    			}
+    		}
+    		if(match === true){
+    			break;
+    		}
+    	}
+    	if(match === true){
+    		query_f = true;
+    	}else{
+    		query_f = false;
+    	}
+    }
+
+    if(cuisine !== "NA"){
+    	cuisine_f = recipe.Cuisine.indexOf(cuisine) > -1;
+    }
+
+    if(meal !== "NA"){
+    	meal_f = recipe.MealType.indexOf(meal) > -1;
+    }
+
+    if(mins !== "NA"){
+    	mins_f = parseInt(mins) >= recipe.Time;
+    }
+
+    if(dollars !== "NA"){
+    	dollars_f = parseInt(dollars) >= recipe.Budget;
+    }
+    
+    if(calories !== "NA"){
+    	calories_f = parseInt(calories) >= recipe.Calories;
+    }
+    
+    // console.log("query_f = " + query_f);
+    // console.log("cuisine_f = " + cuisine_f);
+    // console.log("meal_f = " + meal_f);
+    // console.log("mins_f = " + mins_f);
+    // console.log("dollars_f = " + dollars_f);
+    // console.log("calories_f = " + calories_f);
+
+    return query_f && cuisine_f && meal_f && mins_f && dollars_f && calories_f;
+}
+
 $(document).ready(function(){
 	$.get( "/allrecipes", function( data ) {
 
 	var recipes = JSON.parse(data);
 	var query = sessionStorage.getItem("query");
-	var cuisine = sessionStorage.getItem("cuisine");
+	var no_results_f = false;
 	for(var i in recipes){
 		var rating = Math.floor((Math.random() * 5) + 1);
-		if(looseComparison(query, cuisine, recipes[i]) || looseComparison2(query, recipes[i])){
+		if(completeComparison(recipes[i])){
 			$("#list").append("<a href='#'" + "class='result' id='"+ recipes[i].ID + "'>" + 
 							"<div class='media'>" +
 							"<div class='media-left'>" +
@@ -70,8 +166,14 @@ $(document).ready(function(){
 						  "</div>" + 
 						  "</a>");
 		$("#list").append("<hr>");
+		no_results_f = true;
 	}
-		}
+	
+	}
+	if(no_results_f === false){
+		$("#list").append("<h4>No results found for \"" + query + "\"</h4>");
+	}
+
 	});
 });
 </script>
