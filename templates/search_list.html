@@ -134,45 +134,22 @@ function completeComparison(recipe) {
 $(document).ready(function(){
 	$.get( "/allrecipes", function( data ) {
 
-	var recipes = JSON.parse(data);
-	var query = sessionStorage.getItem("query");
-	var no_results_f = false;
-	for(var i in recipes){
-		var rating = Math.floor((Math.random() * 5) + 1);
-		if(completeComparison(recipes[i])){
-			$("#list").append("<a href='#'" + "class='result' id='"+ recipes[i].ID + "'>" + 
-							"<div class='media'>" +
-							"<div class='media-left'>" +
-								"<img src='" + recipes[i].ImgURL + "' " + "class='media-object' style='width:60px'>" +
-							"</div>" +
-							"<div class='media-body'>" +
-								"<h4 class='media-heading'>" + recipes[i].Title + "</h4>" +
-								"<div class='row'>" +
-									"<div class='col-md-6'>" +
-										"<p>Time: " + recipes[i].Time + "</p>" +
-										"<p>Calories:" + recipes[i].Calories + "</p>" +
-										"<p>Budget:" + recipes[i].Budget + "</p>" +
-									"</div>" +
-									"<div class='col-md-6'>" +
-										"<p>Cuisine: " + recipes[i].Cuisine + "</p>" +
-										"<p>MealType: " + recipes[i].MealType + "</p>" +
-										"<p>Serves: " + recipes[i].Serves + "</p>" +
-									"</div>" +
-								"</div>" +
-								"<div class='row'>" +
-									"<p>&nbsp;&nbsp;&nbsp;&nbsp;rating: "+ rating + "</p>" +
-								"</div>" +
-							"</div>" +
-						  "</div>" + 
-						  "</a>");
-		$("#list").append("<hr>");
-		no_results_f = true;
-	}
-	
-	}
-	if(no_results_f === false){
-		$("#list").append("<h4>No results found for \"" + query + "\"</h4>");
-	}
+		var recipes = JSON.parse(data);
+		var query = sessionStorage.getItem("query");
+		var no_results_f = false;
+		for(var i in recipes){
+			var rating = Math.floor((Math.random() * 5) + 1);
+			if(completeComparison(recipes[i])){
+				$.get('/recipethumbnail?recipe=' + recipes[i].ID, function(data) {
+					$("#list").append(data);
+				});
+				no_results_f = true;
+			}
+		
+		}
+		if(no_results_f === false){
+			$("#list").append("<h4>No results found for \"" + query + "\"</h4>");
+		}
 
 	});
 });
