@@ -7,9 +7,25 @@
             "Text": "pretty average"
         },
         {
-            "User": "goat",
+            "User": "adam",
             "Rating": 4,
             "Text": "meh"
+        }
+    ],
+	"besthummus":
+	[
+        {
+            "User": "adam",
+            "Rating": 3,
+            "Text": "too oily"
+        }
+    ],
+    "glazedsalmon":
+    [
+        {
+            "User": "jean",
+            "Rating": 4,
+            "Text": "very easy to cook"
         }
     ],
     "greeksalad":
@@ -25,6 +41,117 @@
             "Text": "Descriptions are terrible"
         }
     ],
-	"Recipe3":
-	[]
+    "healthier":
+    [
+        {
+            "User": "adam",
+            "Rating": 1,
+            "Text": "Not really healthy"
+        }
+    ],
+    "hummus":
+    [
+        {
+            "User": "liam",
+            "Rating": 4,
+            "Text": "decent hummus"
+        },
+        {
+            "User": "adam",
+            "Rating": 3,
+            "Text": "meh"
+        }
+    ],
+    "john":
+    [
+        {
+            "User": "liam",
+            "Rating": 4,
+            "Text": "i like meatballs"
+        },
+        {
+            "User": "jane",
+            "Rating": 5,
+            "Text": "John is the best"
+        }
+    ],
+    "mamas":
+    [
+        {
+            "User": "liam",
+            "Rating": 4,
+            "Text": "i like meatballs"
+        }
+    ],
+    "megans":
+    [
+        {
+            "User": "liam",
+            "Rating": 1,
+            "Text": "worst meatball recipe on this website"
+        }
+    ],
+    "mushroomhummus":
+    [
+        {
+            "User": "adam",
+            "Rating": 3,
+            "Text": "mediocre"
+        }
+    ],
+    "peachcobbler":
+    [
+        {
+            "User": "adam",
+            "Rating": 3,
+            "Text": "mediocre"
+        }       
+    ],
+    "realhummus":
+    [
+        {
+            "User": "liam",
+            "Rating": 4,
+            "Text": "the best"
+        },
+        {
+            "User": "jane",
+            "Rating": 2,
+            "Text": "I don't like the ingredients"
+        }
+    ],
+    "ros":
+    [
+        {
+            "User": "liam",
+            "Rating": 5,
+            "Text": "This is the best!!"
+        },
+        {
+            "User": "jane",
+            "Rating": 4,
+            "Text": "Steps are easy to follow"
+        }
+    ],
+    "spaghetti":
+    [
+        {
+            "User": "liam",
+            "Rating": 5,
+            "Text": "meatballs!"
+        },
+        {
+            "User": "jane",
+            "Rating": 4,
+            "Text": "Easy to make"
+        }
+    ],
+    "wildsalmon":
+    [
+        {
+            "User": "jane",
+            "Rating": 4,
+            "Text": "Healthy, but difficult to cook"
+        }
+    ]
 }
