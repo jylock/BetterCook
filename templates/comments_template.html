@@ -19,15 +19,20 @@
 
 <br><br>
 <h3>{{ len .Comments }} comments for this recipe</h3>
+<br><br>
+
 {{ range $comment := .Comments }}
-<div class="media">
-    <div class="media-left">
+<div class="row text-left">
+    <div class="col-md-1">
         <span class="glyphicon glyphicon-user"></span>
     </div>
-    <div class="media-body">
-        <h4 class="media-heading">User: {{ $comment.User }}</h4>
-        <p>Rating: {{ $comment.Rating }}</p>
-        <p>Text: {{ $comment.Text }}</p>
+    <div class="col-md-11">
+        <blockquote>
+            <em>"{{ $comment.Text }}"</em>
+            <small>Rating: {{ $comment.Rating }}</small>
+            <footer>From {{ $comment.User }}</footer>
+        </blockquote>
+        
     </div>
 </div>
 <hr>
