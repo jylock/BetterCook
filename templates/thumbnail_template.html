@@ -1,27 +1,41 @@
-<a href='#' class='result' id='{{ .R.ID }}'> 
-    <div class='media'>
-        <div class='media-left'>
-            <img src='{{ .R.ImgURL }}' class='media-object' style='width:60px'>
-        </div>
-        <div class='media-body'>
-            <h4 class='media-heading'>{{ .R.Title }}</h4>
-            <div class='row'>
-                <div class='col-md-6'>
-                    <p>Time: {{ .R.Time }}</p>
-                    <p>Calories: {{ .R.Calories }}</p>
-                    <p>Budget: {{ .R.Budget }}</p>
-                </div>
-                <div class='col-md-6'>
-                    <p>Cuisine: {{ .R.Cuisine }}</p>
-                    <p>MealType: {{ .R.MealType }}</p>
-                    <p>Serves: {{ .R.Serves }}</p>
+<tr>
+    <td>
+        <a href='#' class='result' id='{{ .R.ID }}'>
+            <div class="row">
+                <div class='col-md-3'></div>
+                <div class='col-md-9'>
+                    <h4>{{ .R.Title }}</h4>
                 </div>
             </div>
-            <div class='row'><div class="col-md-12">Rating: {{ .rating }}</div></div>
-        </div>
-    </div>
-</a>
-<hr>
+
+            <div class='row'>
+                <div class='col-md-3'>
+                    <img src='{{ .R.ImgURL }}' style='width:90px'>
+                </div>
+                <div class='col-md-9'>
+                    
+                    <p><strong>Rating: </strong>{{ .rating }}</p>
+                    <div class='row'>
+                        <div class='col-md-5'>
+                            <p><strong>Time: </strong>{{ .R.Time }}</p>
+                            <p><strong>Calories: </strong>{{ .R.Calories }}</p>
+                            <p><strong>Budget: </strong>{{ .R.Budget }}</p>
+                            
+                        </div>
+                        <div class='col-md-7'>
+                            <p><strong>Cuisine: </strong>{{ .R.Cuisine }}</p>
+                            <p><strong>MealType: </strong>{{ .R.MealType }}</p>
+                            <p><strong>Serves: </strong>{{ .R.Serves }}</p>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a>
+    </td>
+</tr>
+
+
 
 <!--
 <div>

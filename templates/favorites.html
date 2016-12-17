@@ -23,9 +23,15 @@
             </div>
 
             <div class="row">
-                <div class="col-md-5" id="favorites_list"></div>
+                <div class="col-md-6 text-left" id="favorites_list">
+                    <table class="table table-bordered table-hover">
+                        <tbody>
+                            
+                        </tbody>
+                    </table>
+                </div>
 
-                <div class="col-md-7" id="dynamic_tabs"></div>
+                <div class="col-md-6" id="dynamic_tabs"></div>
             </div>
             
         </div>
@@ -48,7 +54,7 @@
                 if(favorites.indexOf(recipes[i].ID) > -1){
                     $.get('/recipethumbnail?recipe=' + recipes[i].ID, function(data)
                     {
-                        $('#favorites_list').append(data);
+                        $("#favorites_list").find("tbody").append(data);
                     });
                 }
             }

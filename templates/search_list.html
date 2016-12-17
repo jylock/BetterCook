@@ -1,13 +1,9 @@
 <div class="text-left" id="list">
-	<!-- <div class="media">
-		<div class="media-left">
-			<img src="img_avatar1.png" class="media-object" style="width:60px">
-		</div>
-		<div class="media-body">
-			<h4 class="media-heading">John Doe</h4>
-			<p>Lorem ipsum...</p>
-		</div>
-	</div> -->
+	<table class="table table-bordered table-hover">
+		<tbody>
+			
+		</tbody>
+	</table>
 </div>
 <script type="text/javascript">
 function looseComparison(query, cuisine, recipe) {
@@ -141,7 +137,7 @@ $(document).ready(function(){
 			var rating = Math.floor((Math.random() * 5) + 1);
 			if(completeComparison(recipes[i])){
 				$.get('/recipethumbnail?recipe=' + recipes[i].ID, function(data) {
-					$("#list").append(data);
+					$("#list").find("tbody").append(data);
 				});
 				no_results_f = true;
 			}
