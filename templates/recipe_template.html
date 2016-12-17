@@ -15,7 +15,7 @@
         </ul>
 
         {{ if .username }}
-        <button class="btn btn-danger btn-lg fav_btn" id="{{ .R.ID }}">Fav / Unfav {{ .R.Title }}</button>
+        <button class="btn btn-danger btn-lg fav_btn" id="fav_{{ .R.ID }}">{{ .FavUnfav }}</button>
         {{ end }}
         </div>
     </div>

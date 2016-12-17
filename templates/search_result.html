@@ -9,6 +9,7 @@
         <!-- Jquery Library -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <script src="/static/notify.min.js"></script>
         
         <link rel="stylesheet" type="text/css" href="/static/css/search_bar.css">
     </head>
@@ -73,30 +74,24 @@
             $("body").on("click", ".result", function(){
                 var id = this.id;
                 $("#recipe").load("/recipe?recipe=" + id + "",function(){
-
+                    $('[data-toggle="tooltip"]').tooltip();
                     $(".fav_btn").click(function(){
-                        
-                        if (sessionStorage.getItem("favorites")) {
-                            var favorites = JSON.parse(sessionStorage.getItem("favorites"));
-                            var index = favorites.indexOf(this.id);
-                            if( index > -1) {
-                                favorites.splice(index, 1);
-                                alert("Recipe Removed From Favorites!");
-                                location.reload();
-                            }else{
-                                favorites.push(this.id);
-                                alert("Recipe Added to Favorites!");
+                        $.get("/favexists?recipe=" + id, function(data) {
+                            if (data == "true") {
+                                // Remove from fav
+                                $.get("/favremove?recipe=" + id);
+                                $("#fav_"+id).text("Add to favorites");
+                                $.notify("Removed from favorites", "success");
+                            } else {
+                                // Add to fav
+                                $.get("/favadd?recipe=" + id);
+                                $("#fav_"+id).text("Remove from favorites");
+                                $.notify("Added to favorites", "success");
                             }
-                            sessionStorage.setItem("favorites", JSON.stringify(favorites));
-                            
-                        } else {
-                            sessionStorage.setItem("favorites", JSON.stringify([this.id]));
-                            alert("Recipe Added to Favorites!");
-                        }
+                        });
                     });
 
-                    // $(".hover_ingredient").tooltip();
-                    $('[data-toggle="tooltip"]').tooltip(); 
+                    // $(".hover_ingredient").tooltip(); 
 
                 });
 

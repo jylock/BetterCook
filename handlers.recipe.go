@@ -23,7 +23,7 @@ type RecipeInfo struct {
 
 func handleRecipeGet(w http.ResponseWriter, r *http.Request) {
 	recipe := r.URL.Query().Get("recipe")
-
+	username := getUsername(r)
 	// Read recipe json file from /recipe
 	data, err := ioutil.ReadFile("./recipes/" + recipe + ".json")
 	if err != nil {
@@ -41,7 +41,17 @@ func handleRecipeGet(w http.ResponseWriter, r *http.Request) {
 	tmplData := map[string]interface{}{}
 	tmplData["R"] = recipeInfo
 	tmplData["rating"] = getRating(recipe)
-	tmplData["username"] = getUsername(r)
+	tmplData["username"] = username
+	tmplData["FavUnfav"] = ""
+
+	// If user is logged in, render favorite button
+	if username != "" {
+		if favoriteExists(username, recipeInfo.ID) {
+			tmplData["FavUnfav"] = "Remove from favorites"
+		} else {
+			tmplData["FavUnfav"] = "Add to favorites"
+		}
+	}
 
 	renderTemplateFromDir(w, "templates", "recipe_template.html", tmplData)
 }

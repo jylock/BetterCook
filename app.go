@@ -34,6 +34,11 @@ func getHandlers() *mux.Router {
 	router.HandleFunc("/recipecomments", handleRecipeCommentsGet).Methods("GET")
 	router.HandleFunc("/recipebudget", handleRecipeBudgetGet).Methods("GET")
 	router.HandleFunc("/allrecipes", handleAllRecipesGet).Methods("GET")
+	// Favorites GET handles
+	router.HandleFunc("/favget", handleFavoritesReadGet).Methods("GET")
+	router.HandleFunc("/favadd", handleFavoritesAddGet).Methods("GET")
+	router.HandleFunc("/favremove", handleFavoritesRemoveGet).Methods("GET")
+	router.HandleFunc("/favexists", handleFavoritesExists).Methods("GET")
 
 	return router
 }
