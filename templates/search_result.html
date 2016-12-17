@@ -72,6 +72,8 @@
             
             
             $("body").on("click", ".result", function(){
+                // $(this).addClass('active').siblings().removeClass('active');
+                $(this).addClass('bg-info').siblings().removeClass('bg-info');
                 var id = this.id;
                 $("#recipe").load("/recipe?recipe=" + id + "",function(){
                     $('[data-toggle="tooltip"]').tooltip();
