@@ -10,13 +10,15 @@
             </div>
             <div class="form-group">
                 <!-- <a href="/template?page=search_result"><button type="submit" class="btn btn-default" id="search_btn">Search</button></a> -->
-                <a href="/template?page=search_result" id="search_btn">Search</a>
+                <button  type="button" class="btn btn-info"><a href="/template?page=search_result" id="search_btn">Search</a></button>
+                <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#advanced">Advanced Search</button>
             </div>
         </div>
     </div>
     
     <br>
     
+    <div id="advanced" class="collapse">
     <div class="row">
         <div class="col-md-6">
             <div class="form-horizontal">
@@ -81,8 +83,8 @@
                 </div>
             </div>
         </div>
+    </div>       
     </div>
-    
 </div>
 
 <script>
