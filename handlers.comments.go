@@ -1,6 +1,7 @@
 package main
 
 import (
+	"io"
 	"log"
 	"net/http"
 	"strconv"
@@ -25,7 +26,7 @@ func handleCommentPost(w http.ResponseWriter, r *http.Request) {
 
 	addComment(recipe, Comment{username, rating, comment})
 	log.Println("Saved", recipe, comment, rating)
-	http.Redirect(w, r, "/", 200)
+	io.WriteString(w, "Success")
 }
 
 // func handleCommentGet(w http.ResponseWriter, r *http.Request) {
