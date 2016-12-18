@@ -34,7 +34,7 @@
                     <label class="control-label col-md-3" for="diet">Diet:</label>
                     <div class="col-md-9">
                         <select class="form-control" id="diet">
-                            <option></option>
+                            <option value="" disabled selected>Select dietary restriction. ex: vegan</option>
                             <option>Vegan</option>
                             <option>Vegetarian</option>
                             <option>Halal</option>
@@ -45,10 +45,10 @@
                 </div>
                 
                 <div class="form-group">
-                    <label class="control-label col-md-3" for="meal">Meal Type:</label>
+                    <label class="control-label col-md-3" for="meal">Course:</label>
                     <div class="col-md-9">
                         <select class="form-control" id="meal">
-                            <option></option>
+                            <option value="" disabled selected>Select meal course. ex: dessert</option>
                             <option>Entree</option>
                             <option>Dessert</option>
                             <option>Appetizer</option>
@@ -61,9 +61,9 @@
         <div class="col-md-6">
             <div class="form-horizontal">
                 <div class="form-group">
-                    <label class="control-label col-md-3" for="mins">Minutes:</label>
+                    <label class="control-label col-md-3" for="mins">Hours:</label>
                     <div class="col-md-9">
-                        <input type="text" class="form-control " id="mins" placeholder="Enter Minutes">
+                        <input type="text" class="form-control " id="mins" placeholder="Enter Hours">
                     </div>
                     
                 </div>
@@ -96,10 +96,10 @@
         if(meal === ""){ cuisine = "NA"; }
 
         var diet = $("#diet").val();
-        if(diet === ""){ diet = "NA"; }
+        if(diet === null){ diet = "NA"; }
 
         var meal = $("#meal").val();
-        if(meal === ""){ meal = "NA"; }
+        if(meal === null){ meal = "NA"; }
 
         var mins = $("#mins").val();
         if(mins === ""){ mins = "NA"; }

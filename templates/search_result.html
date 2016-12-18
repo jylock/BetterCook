@@ -42,10 +42,10 @@
                     if(meal === ""){ cuisine = "NA"; }
 
                     var diet = $("#diet").val();
-                    if(diet === ""){ diet = "NA"; }
+                    if(diet === null){ diet = "NA"; }
 
                     var meal = $("#meal").val();
-                    if(meal === ""){ meal = "NA"; }
+                    if(meal === null){ meal = "NA"; }
 
                     var mins = $("#mins").val();
                     if(mins === ""){ mins = "NA"; }
@@ -110,8 +110,8 @@
 
                             sessionStorage.setItem("grocery", JSON.stringify(grocery));
                     });
-
-                        alert("Ingredients Added to Grocery List!");
+                        $.notify("Ingredients Added to Grocery List!", "success");
+                        // alert("Ingredients Added to Grocery List!");
                     });
                     
                 });

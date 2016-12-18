@@ -106,7 +106,13 @@ function completeComparison(recipe) {
     }
 
     if(mins !== "NA"){
-    	mins_f = parseInt(mins) >= recipe.Time;
+    	var temp_mins = 0;
+    	if(mins.indexOf(".") > -1){
+    		temp_mins = parseFloat(mins)*60;
+    	}else{
+    		temp_mins = parseInt(mins)*60;
+    	}
+    	mins_f = temp_mins >= recipe.Time;
     }
 
     if(dollars !== "NA"){
